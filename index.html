@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing de Redes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <main class="container">
+    <section class="card">
+      <div class="profile-wrap">
+        <img
+          src="img/circular alternativo azul.png"
+          alt="Logo Audioalarm"
+          class="profile-img"
+        />
+      </div>
+
+      <span class="tag">Disponible en redes</span>
+
+      <h1>AUDIOALARM</h1>
+
+      <p class="description">
+        SERVICIO TÉCNICO AUTOMOTRIZ: Especialista en Audio y Sistemas de Seguridad
+        Automotriz: Sistema de audio, Subwoofer, Alarmas, GPS, inmovilizador, etc...
+      </p>
+
+      <div class="links">
+        <a
+          href="https://www.instagram.com/audioalarm?igsh=MWlvMmRtejdnajNvdQ=="
+          target="_blank"
+          class="link-btn"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a
+          href="https://facebook.com/tuusuario"
+          target="_blank"
+          class="link-btn"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+
+        <a
+          href="https://wa.me/56931201779"
+          target="_blank"
+          class="link-btn"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <button class="link-btn payment-btn" onclick="openModal()">
+          <i class="fa-solid fa-wallet"></i>
+          <span>Medios de Pago</span>
+        </button>
+      </div>
+
+      <footer class="footer">
+        <p>© 2026 · Todos los derechos reservados</p>
+      </footer>
+    </section>
+  </main>
+
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+
+      <img src="img/DATOS.png" alt="Datos de pago" class="payment-img" />
+
+      <div class="payment-actions">
+        <button class="copy-btn" onclick="copyPaymentData()">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copiar datos</span>
+        </button>
+
+        <p id="copyMessage" class="copy-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("paymentModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("paymentModal").style.display = "none";
+      document.getElementById("copyMessage").textContent = "";
+    }
+
+    function copyPaymentData() {
+      const paymentText = `
+
+Titular: ANTHONY WESLEY VILLARROEL MARQUEZ
+Banco: mercado pago
+Tipo de cuenta: cuenta vista
+RUT: 25815075-9
+N° de cuenta: 1019336799
+Correo: VILLARROELANTHONY2020@GMAIL.COM`;
+
+      navigator.clipboard.writeText(paymentText)
+        .then(() => {
+          document.getElementById("copyMessage").textContent = "Datos copiados correctamente";
+        })
+        .catch(() => {
+          document.getElementById("copyMessage").textContent = "No se pudieron copiar los datos";
+        });
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("paymentModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+        document.getElementById("copyMessage").textContent = "";
+      }
+    };
+  </script>
+</body>
+</html>
