@@ -77,7 +77,7 @@ body {
   object-fit: contain; /* 🔥 ESTE ES EL CAMBIO */
   border-radius: 50%;
   background: #ffffff;
-  padding: 10px; /* opcional para que no toque bordes */
+  padding: 0px; /* opcional para que no toque bordes */
 }
 
 
