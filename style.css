@@ -72,12 +72,13 @@ body {
 }
 
 .profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 🔥 ESTE ES EL CAMBIO */
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 0px; /* opcional para que no toque bordes */
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0;
+
 }
 
 
